@@ -1,0 +1,32 @@
+from graphics import *
+
+def insideButton(pt):
+    x = pt.getX()
+    y = pt.getY()
+
+    return (30 <= x <= 70) and (40 <= y <= 60)
+
+def main():
+    win = GraphWin("Button Demo", 100, 100)
+
+    button = Rectangle(Point(30, 40), Point(70, 60))
+    button.draw(win)
+
+    label = Text(Point(50, 50), "Click Me")
+    label.draw(win)
+
+    message = Text(Point(50, 20), "Click inside button")
+    message.draw(win)
+
+    while True:
+        clickPt = win.getMouse()
+
+        if insideButton(clickPt):
+            break
+
+    message.setText("Button Pressed!")
+
+    win.getMouse()
+    win.close()
+
+main()

@@ -1,0 +1,20 @@
+def simpleDiv(dividend, divisor):
+    count = 0
+
+    while dividend >= divisor:
+        dividend = dividend - divisor
+        count += 1
+
+    return count
+
+
+def main():
+    dividend = int(input("Enter dividend: "))
+    divisor = int(input("Enter divisor: "))
+
+    result = simpleDiv(dividend, divisor)
+
+    print("Quotient =", result)
+
+
+main()

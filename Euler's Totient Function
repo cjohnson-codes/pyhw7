@@ -1,0 +1,31 @@
+def gcd(a, b):
+
+    while b != 0:
+        a, b = b, a % b
+
+    return a
+
+
+def phi(n):
+
+    relatives = []
+
+    for k in range(1, n):
+        if gcd(n, k) == 1:
+            relatives.append(k)
+
+    return relatives
+
+
+def main():
+
+    n = int(input("Enter n: "))
+
+    result = phi(n)
+
+    print("Numbers relatively prime to", n)
+    print(result)
+
+    print("phi(", n, ") =", len(result), sep="")
+
+main()

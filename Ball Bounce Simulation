@@ -1,0 +1,12 @@
+def main():
+    height = float(input("Enter initial height (meters): "))
+
+    bounces = 0
+
+    while height * 0.60 >= 0.001:
+        height = height * 0.60
+        bounces += 1
+
+    print("Number of bounces:", bounces)
+
+main()
